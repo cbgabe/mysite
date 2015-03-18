@@ -1,8 +1,8 @@
 class Contact < MailForm::Base
-  attribute :name,       :validate => true
-  attribute :email,      :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+  attribute :name,        :validate => true
+  attribute :email,       :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :message
-  attribute :attachment, :validate => true
+  attribute :attach_file, :attachment => true
 
   def headers
     {

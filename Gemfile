@@ -18,3 +18,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'sqlite3'
 
 gem 'spring',        group: :development
+
+group :development, :test do
+  gem 'foreman'
+end

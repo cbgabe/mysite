@@ -1,0 +1,63 @@
+/ header
+nav.navbar.navbar-fixed-top.navbar-inverse
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href="#" Brand
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+      ul.nav.navbar-nav.navbar-right
+        li.active
+          a href="#" Link
+        li
+          a href="#" Link
+
+/ jumbotron
+.jumbotron.text-center
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        h1 Hello, world!
+        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+        a.btn.btn-primary.btn-lg href="#" role="button" Learn more
+
+/ jumbotron
+.container
+  .row.text-center
+    .col-md-4
+      h2 Hello, world!
+      p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    .col-md-4
+      h2 Hello, world!
+      p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    .col-md-4
+      h2 Hello, world!
+      p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+hr
+
+/ contact form
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      .contact-form
+        h2.text-center Contact me
+        = simple_form_for @contact do |f|
+          .form-group
+            = f.input :name, required: true, input_html: { class: "form-control" }, placeholder: 'Full Name'
+
+          .form-group
+            = f.input :email, required: true, input_html: { class: "form-control" }, placeholder: 'email@example.com'
+
+          = f.label :attach_file
+          .form-group
+            = f.file_field(:attach_file, class: "form-control")
+
+          = f.label :message
+          .form-group
+            = f.text_area :message, required: false, input_html: { class: "form-control" }, placeholder: 'Leave your message to me...'
+          .form-group
+            = f.button :submit, 'Send', class: 'btn btn-lg btn-primary'
